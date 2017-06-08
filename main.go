@@ -22,7 +22,7 @@ func main() {
 
 	doc, _ := goquery.NewDocument(url)
 	var i int
-	doc.Find("div > div > div > div > div > div > div > div > div > div > div > p > a > img").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("div > p > a > img").Each(func(_ int, s *goquery.Selection) {
 		text, _ := s.Attr("src")
 		fmt.Println(text)
 		err := SavePic(filename, text, i)
